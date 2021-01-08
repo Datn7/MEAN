@@ -1,0 +1,53 @@
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        ngModel
+        name="title"
+        required
+        #title="ngModel"
+        placeholder="პოსტის სათაური"
+      />
+      <mat-error *ngIf="title.invalid">შეიყვანეთ სათაური</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="3"
+        ngModel
+        name="content"
+        required
+        #content="ngModel"
+        placeholder="პოსტის კონტენტი"
+      ></textarea>
+      <mat-error *ngIf="title.invalid">შეიყვანეთ კონტენტი</mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      style="margin-top: 1rem"
+    >
+      შენახვა
+    </button>
+  </form>
+</mat-card>
+
+<!--
+  <mat-card>
+  <mat-form-field>
+    <textarea matInput type="text" [(ngModel)]="enteredTitle"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="onAddPost()">
+    შენახვა
+  </button>
+</mat-card>
+
+-->
